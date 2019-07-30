@@ -31,7 +31,7 @@ class Libsmb2Conan(ConanFile):
     }
 
     def source(self):
-        if False: # if running from own customized version (might not be needed here)
+        if True: # if running from own customized version (needed due to exports renaming)
             git=tools.Git(folder="libnfs")
             git.clone("https://github.com/pietermessely/libnfs.git")
         else:
