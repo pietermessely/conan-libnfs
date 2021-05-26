@@ -4,7 +4,7 @@
 from conans import ConanFile, CMake, tools
 import os
 
-class Libsmb2Conan(ConanFile):
+class LibConan(ConanFile):
     name = "libnfs"
     version = "0.0.1"
     description = "NFS client library"
@@ -21,13 +21,13 @@ class Libsmb2Conan(ConanFile):
     options = {
         "shared": [True, False],
         "fPIC": [True, False],
-	"with_openssl": [True, False]
+        "with_openssl": [True, False]
     }
 
     default_options = {
         "shared": False,
         "fPIC": True,
-	"with_openssl": True
+        "with_openssl": True
     }
 
     def source(self):
@@ -51,7 +51,7 @@ class Libsmb2Conan(ConanFile):
         cmake.definitions['ENABLE_TESTS'] = False
         cmake.definitions['ENABLE_DOCUMENTATION'] = False
         cmake.definitions['ENABLE_UTILS'] = False
-        cmake.definitions['ENABLE_EXAMPLES'] = True
+        cmake.definitions['ENABLE_EXAMPLES'] = False
         cmake.definitions['CMAKE_INSTALL_PREFIX'] = self.install_subfolder
         cmake.configure()
         cmake.build()

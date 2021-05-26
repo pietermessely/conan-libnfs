@@ -53,10 +53,13 @@ WSADATA wsaData;
 #include <cstring>
 #include <inttypes.h>
 //
+// pim: start should probably add the ifdef as well ...
+typedef char *caddr_t;
+// pim: end
+
 #include "nfsc/libnfs.h"
 #include "nfsc/libnfs-raw.h"
-#include "nfsc/libnfs-zdr.h"
-
+//#include "nfsc/libnfs-zdr.h"
 
 int main(int argc, char *argv[])
 {
